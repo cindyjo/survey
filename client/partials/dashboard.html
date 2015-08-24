@@ -1,0 +1,43 @@
+
+<div class="container-fluid" ng-controller="pollsController as pc"> 
+	<div class="row">
+		<div class="col-md-10"></div>
+		<div class="col-md-2">
+			<ul class ="list-inline">
+				<li><a href="#/newPoll">Create a New Poll</a></li>
+				<li><a href="#/">Logout</a></li>
+			</ul>
+		</div>
+	</div><br>
+	<div class="row">
+		<div class="col-md-12">
+			<p>{{pc.logged_user}} is logged in</p>
+			<h3>Current Polls:</h3>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-10"></div>
+		<div class="col-md-2">
+			<input id="search" type="text" ng-model ="filter_name" placeholder ="Search">
+		</div>
+	</div><br>
+	<div class="row">
+		<div class="col-md-12">
+			<table class="table table-striped">
+				<tr>
+					<th>Name</th>
+					<th>Survey Question</th>
+					<th>Date Posted</th>
+					<th>Action</th>
+				</tr>
+					<tr ng-repeat = "poll in pc.polls | orderBy:'date' | filter: filter_name">
+					<td ng-bind ="poll.name"></td>
+					<td><a href="#/askPoll" ng-click="pc.getinfo(poll)">{{poll.question}}</a></td>
+					<td ng-bind ="poll.created_at | date"></td>
+					<td><a href ="#/dashboard" ng-show="poll.name == pc.logged_user" ng-click="pc.removePoll(poll)" class="btn btn-default">Delete</a></td>
+				</tr>
+			</table>
+		</div>
+	</div><br>
+</div>
+

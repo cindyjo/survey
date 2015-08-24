@@ -1,0 +1,12 @@
+{
+  "name": "orders_customers",
+  "dependencies": {
+    "angular-moment": "^0.10.1",
+    "body-parser": "^1.12.2",
+    "express": "^4.12.4",
+    "express-session": "^1.11.3",
+    "moment": "^2.10.3",
+    "mongoose": "^4.0.1",
+    "ng-load": "^1.0.2"
+  }
+}

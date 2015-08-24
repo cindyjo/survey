@@ -1,0 +1,50 @@
+<div class="container-fluid" ng-controller="pollsController as pc"> 
+	<div class="row">
+		<div class="col-md-11"></div>
+		<div class="col-md-1">
+			<ul class ="list-inline">
+				<li><a href="#/dashboard">Go to Polls</a></li>
+			</ul>
+		</div>
+	</div><br>
+	<div class="row">
+		<div class="col-md-12">
+			<p>{{pc.logged_user}} is logged in</p>
+			<h3>{{pc.getOne.question}}</h3>
+			<p>Click the Vote button to choose one.</p>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-7">
+			<table class="table table-striped">
+				<tr>
+					<th>Option</th>
+					<th>Current Count of Votes</th>
+					<th>Action</th>
+				</tr>
+				<tr>
+					<td>{{pc.getOne.option_1}}</td>
+					<td>{{pc.voteCount_1}}</td>
+					<td><a ng-click="pc.voteCount1()" class="btn btn-default">Vote</a></td>
+				</tr>
+				<tr>
+					<td>{{pc.getOne.option_2}}</td>
+					<td>{{pc.voteCount_2}}</td>
+					<td><a ng-click="pc.voteCount2()" class="btn btn-default">Vote</a></td>
+				</tr>
+				<tr>
+					<td>{{pc.getOne.option_3}}</td>
+					<td>{{pc.voteCount_3}}</td>
+					<td><a ng-click="pc.voteCount3()" class="btn btn-default">Vote</a></td>
+				</tr>
+				<tr>
+					<td>{{pc.getOne.option_4}}</td>
+					<td>{{pc.voteCount_4}}</td>
+					<td><a ng-click="pc.voteCount4()" class="btn btn-default">Vote</a></td>
+				</tr>
+			</table>
+		</div>
+	</div><br>
+</div>
+
